@@ -96,8 +96,26 @@ class BookController extends Controller
 
         return view('book/details')->with('books', $books);
     }
-//    public function update(){
-//
-//        return view('auth/account');
-//    }
+    public function rate($book_id){
+
+        if (Auth::check()) {
+
+            $rating = Input::all();
+            $book = Book::find($book_id);
+            $user_id = Auth::id();
+
+            DB::insert('insert into `rating` (`user_id`, `book_id`, `rating`, `comment`) values('.$user_id . ',' . $book_id. ',' . $rating['star'] . ',"' . $rating['comment'] .'")' .
+            ' on duplicate key update `rating` = '. $rating['star'] . ', `comment` =  "' . $rating['comment'].'";');
+        }
+        $userRatings = DB::table('rating')->select('rating')->where('book_id', '=', $book_id)->get();
+        $average = 0;
+        foreach ($userRatings as $userRating) {
+            $average += $userRating->rating;
+        }
+
+        $book->rating = $average / count($userRatings);
+        $book->save();
+
+        return back();
+    }
 }

@@ -9,7 +9,8 @@ class book extends Model
     protected $table = 'book';
     public $primaryKey = 'book_id';
 
-
+public $timestamps = false;
+    
     public function course()
     {
         return $this->belongTo('App\course', 'course_id');

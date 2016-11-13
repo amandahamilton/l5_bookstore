@@ -18,6 +18,7 @@ class CreateRatingTable extends Migration
             $table->integer('book_id')->length(10)->unsigned();
             $table->primary(array('user_id', 'book_id'));
             $table->integer('rating')->nullable(false);
+            $table->string('comment')->nullable();
         });
     }
 

@@ -12,17 +12,14 @@
 */
 Auth::routes();
 
-/*Route::get('/',[
-    'uses' => 'HomeController@index',
-    'as' => 'bookstore.index'
-]);*/
 
 Route::get('/', 'HomeController@index');
 Route::get('/book/display', 'BookController@display');
 Route::post('/book/search', 'BookController@search');
 Route::get('/book/details/{id}', 'BookController@details');
-//Route::get('', 'BookController@update');
-
+Route::get('/users/account', 'HomeController@update');
+Route::post('/users/account', 'HomeController@update');
+Route::post('/book/rate/{id}', 'BookController@rate');
 
 
 

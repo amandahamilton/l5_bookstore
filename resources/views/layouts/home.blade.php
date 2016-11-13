@@ -9,8 +9,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <!-- Styles -->
+<link rel="stylesheet" type="text/css" href="/css/rating.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -126,7 +127,7 @@
                 <div class="top-right links">
                     <a href="{{ url('/cart') }}">Cart</a>
                     <a href="{{ url('/checkout') }}">Checkout</a>
-                    <a href="{{ url('/account') }}">Account</a>
+                    <a href="{{ url('/users/account') }}">Account</a>
                     <a href="{{ url('/logout') }}">Logout</a>
                 </div>
             @else
