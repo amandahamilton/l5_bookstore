@@ -1,3 +1,10 @@
+{{--
+ * Search View Page.
+ * View that displays information in database when it is searched
+ * by book title, author, isbn, course or instructor.
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-11-14
+ --}}
 @section('title')
     <title>Books</title>
 @endsection
@@ -12,6 +19,9 @@
 
         @foreach ($results as $book)
             <div>
+                <p>
+                    <img src="{{ $book['imagePath'] }}" width="128"/>
+                </p>
                 <p>
                     <label>Title: </label>
                     {{ $book['title'] }}
@@ -28,6 +38,10 @@
                 <p>
                     <label>Course name: </label>
                     {{ $book['course_name'] }}
+                </p>
+                <p>
+                    <label>Instructor: </label>
+                    {{ $book['instructor'] }}
                 </p>
 
             </div>

@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Home Controller
+ *  Controller used to update user account information
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-10-24
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
@@ -9,24 +14,12 @@ use Validator;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('index');
     }
 
+    //update user account information
     public function update()
     {
         if (count(Input::all()) > 0) {

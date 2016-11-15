@@ -1,29 +1,38 @@
+{{--
+ * Details View Page.
+ * View that displays textbook details (title, author, ISBN, price,
+ * and star rating of textbook
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-11-14
+ --}}
 @extends('layouts.home')
 
 @section('title')
     <title>Book Details</title>
 @endsection
 
+{{--create table to display necessary information--}}
 @section('content')
-
 <table border="0">
     <tr class="tbl_header">
         <th>Title</th>
         <th>Author</th>
         <th>ISBN</th>
         <th>Price</th>
-        <th>Instructor</th>
-        <th>Course</th>
+        <th>Quantity</th>
     </tr>
-
-    <td><?=$books->title?></td>
+        <img src="{{ $books['imagePath'] }}" width="128"/>
+    <br>
+    {{--gather information for table from BookController varables--}}
+    <br><td><?=$books->title?></td>
     <td><?=$books->author?></td>
     <td><?=$books->isbn?></td>
-    <td><?=$books->price?></td>
-    <td><?=$books->instructor?></td>
-    <td><?=$books->course_name?></td>
+    <td><?=$books->sell_price?></td>
+    <td><?=$quantity?></td>
 
 </table>
+
+{{--insert star ratings that check authentication before rating can be inserted into DB--}}
 <div class="stars">
     <form method="POST" action="/book/rate/{{ $books->book_id }}" name="rating" >
         <input class="star star-5" id="star-5" type="radio" name="star" value = "5" <?=($books['rating']==5 ? 'checked="checked"' : '');?> <?=(!Auth::check())?'onclick="return false;"' : '';?>/>
@@ -39,8 +48,9 @@
         <textarea name="comment"></textarea>
         <?=(Auth::check())? '<input type="submit" value="rate" class = "button">' : '';?>
         <input type="hidden" value = "{{csrf_token()}}" name = "_token">
-
     </form>
 </div>
-
 @endsection
+
+
+

@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Foreign Key to rating - Implementing foreign key constraints.
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-10-24
+ */
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;

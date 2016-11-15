@@ -1,3 +1,10 @@
+{{--
+ * Login View Page.
+ * View that displays login input efilds
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-11-14
+ --}}
+
 @extends('layouts.app')
 
 @section('content')

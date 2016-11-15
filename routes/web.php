@@ -20,7 +20,9 @@ Route::get('/book/details/{id}', 'BookController@details');
 Route::get('/users/account', 'HomeController@update');
 Route::post('/users/account', 'HomeController@update');
 Route::post('/book/rate/{id}', 'BookController@rate');
-
+Route::get('/book/view', 'CartController@view');
+Route::get('/book/remove/{id}', 'CartController@remove');
+Route::get('/book/add/{id}', 'CartController@add');
 
 
 Route::get('/logout', function () {

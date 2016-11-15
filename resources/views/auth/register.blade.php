@@ -1,3 +1,9 @@
+{{--
+ * Register View Page.
+ * View that displays register input feilds to store new user in Ds
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-11-14
+ --}}
 @extends('layouts.app')
 
 @section('content')
@@ -38,7 +44,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>

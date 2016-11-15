@@ -1,7 +1,12 @@
 <?php
-
+/**
+ * User Model
+ * User: Kim Lawlor & Amanda Hamilton
+ * Date: 2016-11-14
+ */
 namespace App;
 
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
